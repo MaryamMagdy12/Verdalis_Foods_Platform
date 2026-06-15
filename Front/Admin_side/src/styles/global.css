@@ -1,0 +1,100 @@
+/* Admin global styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--admin-bg);
+  color: var(--admin-gray-900);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Verdalis Foods admin theme */
+:root {
+  --admin-sidebar-width: 15.5rem;
+  --admin-topbar-height: 4rem;
+  --admin-font-serif: "Playfair Display", Georgia, serif;
+  --admin-bg: #f4f6f5;
+  --admin-green: #1a7a4f;
+  --admin-green-dark: #0a2a1b;
+  --admin-green-light: #4caf50;
+  --admin-green-accent: #3d9b5a;
+  --admin-red: #c62828;
+  --admin-red-dark: #8e0000;
+  --admin-orange: #e67e22;
+  --admin-white: #ffffff;
+  --admin-gray-100: #f1f5f3;
+  --admin-gray-200: #e2e8e6;
+  --admin-gray-300: #cbd5d1;
+  --admin-gray-500: #6b7280;
+  --admin-gray-600: #4b5563;
+  --admin-gray-700: #374151;
+  --admin-gray-900: #0f172a;
+  --admin-shadow: 0 2px 12px rgba(10, 42, 27, 0.06);
+  --admin-shadow-lg: 0 8px 24px rgba(10, 42, 27, 0.1);
+  --admin-radius: 12px;
+  --admin-radius-sm: 8px;
+  --admin-transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.admin-app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-left: var(--admin-sidebar-width);
+}
+
+.admin-app-main {
+  flex: 1;
+  min-height: 0;
+  padding: 1.5rem 1.75rem 2rem;
+  overflow-x: hidden;
+  /* background: var(--admin-bg); */
+  background-image: url("../assets/images/ChatGPT Image May 30, 2026, 11_10_23 PM.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 992px) {
+  .admin-app-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-app-main {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

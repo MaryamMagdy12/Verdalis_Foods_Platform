@@ -1,0 +1,524 @@
+.hp-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
+
+.hp-cat-card {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hp-cat-card-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.hp-cat-card-placeholder {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 92, 58, 0.08);
+  font-size: 2rem;
+  color: var(--vf-emerald);
+}
+
+.hp-cat-card-title {
+  display: block;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: var(--vf-slate);
+}
+
+.hp-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.hp-product-card {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  color: inherit;
+}
+
+.hp-product-card img {
+  width: 100%;
+  aspect-ratio: 4/6;
+  object-fit: cover;
+}
+
+.hp-product-card-body {
+  padding: 1rem 1.15rem 1.25rem;
+}
+
+.hp-product-cat {
+  font-size: 0.75rem;
+  color: var(--vf-emerald-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hp-product-card h3 {
+  margin: 0.35rem 0;
+  font-size: 1.05rem;
+  color: var(--vf-slate);
+}
+
+.hp-product-price {
+  font-weight: 700;
+  color: var(--vf-emerald);
+  margin: 0;
+}
+
+/* —— Reference v2: Wholesale banner —— */
+.hp-ref-wholesale {
+  padding: 0 1.25rem clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.hp-ref-wholesale__banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  /* background: linear-gradient(125deg, #0a3d24 0%, #0f5c3a 42%, #1a7a4f 100%); */
+  background-image: url("../../assets/images/ChatGPT Image May 18, 2026, 06_25_57 AM.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 20px 50px rgba(10, 61, 36, 0.22);
+
+}
+
+.hp-ref-wholesale__pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: radial-gradient(circle at 20% 30%, #fff 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.hp-ref-wholesale__decor {
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+  width: min(42%, 220px);
+  object-fit: contain;
+  object-position: top right;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hp-ref-wholesale__main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+  padding: clamp(2rem, 4vw, 2.75rem) clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.hp-ref-wholesale__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-family: var(--vf-font);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.hp-ref-wholesale__title {
+  font-family: var(--vf-display);
+  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.65rem;
+  line-height: 1.15;
+  max-width: 520px;
+}
+
+.hp-ref-wholesale__text {
+  font-family: var(--vf-font);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 480px;
+}
+
+.hp-ref-wholesale__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.hp-ref-wholesale__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.72rem 1.25rem;
+  border-radius: 999px;
+  font-family: var(--vf-font);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.hp-ref-wholesale__btn:hover {
+  transform: translateY(-1px);
+}
+
+.hp-ref-wholesale__btn--solid {
+  background: #fff;
+  color: #0f5c3a;
+}
+
+.hp-ref-wholesale__btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+.hp-ref-wholesale__btn--outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #fff;
+}
+
+/* —— Reference v2: Logistics —— */
+.hp-ref-logistics {
+  padding: clamp(3rem, 6vw, 4.5rem) 1.25rem;
+  /* background: #f4f6f3; */
+}
+
+.hp-ref-logistics__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.hp-ref-logistics__kicker {
+  font-family: var(--vf-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2d8a5a;
+  margin: 0 0 0.55rem;
+}
+
+.hp-ref-logistics__title {
+  font-family: var(--vf-display);
+  font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+  font-weight: 600;
+  color: #0f3d24;
+  margin: 0 0 0.75rem;
+  line-height: 1.18;
+}
+
+.hp-ref-logistics__text {
+  font-family: var(--vf-font);
+  font-size: 0.94rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 0 0 1.25rem;
+  max-width: 440px;
+}
+
+.hp-ref-logistics__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.72rem 1.35rem;
+  border-radius: 999px;
+  background: #0f5c3a;
+  color: #fff;
+  font-family: var(--vf-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hp-ref-logistics__btn:hover {
+  background: #1a7a4f;
+  transform: translateY(-1px);
+}
+
+.hp-ref-logistics__art {
+  position: relative;
+  margin-top: 1.75rem;
+  max-width: 380px;
+}
+
+.hp-ref-logistics__art img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+ border-radius: 1rem;
+  z-index: 1;
+}
+
+.hp-ref-logistics__globe {
+  position: absolute;
+  left: 10%;
+  bottom: 5%;
+  width: 70%;
+  height: 55%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 155, 106, 0.15) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.hp-ref-logistics__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.hp-ref-logistics__card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.35rem 1rem 1.1rem;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(15, 61, 36, 0.08);
+  border: 1px solid rgba(15, 92, 58, 0.06);
+}
+
+.hp-ref-logistics__card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(125, 186, 40, 0.18);
+  color: #0f5c3a;
+  font-size: 1.1rem;
+}
+
+.hp-ref-logistics__card h3 {
+  font-family: var(--vf-font);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f3d24;
+  margin: 0 0 0.5rem;
+}
+
+.hp-ref-logistics__card-rule {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin: 0 auto 0.55rem;
+  background: #2d9b6a;
+  border-radius: 999px;
+}
+
+.hp-ref-logistics__card p {
+  font-family: var(--vf-font);
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* —— Reference v2: Retailer benefits —— */
+.hp-ref-benefits {
+  position: relative;
+  padding: clamp(3.25rem, 6vw, 5rem) 1.25rem clamp(3.5rem, 6vw, 5rem);
+  /* background: linear-gradient(180deg, #fafbf8 0%, #f0f5f1 100%); */
+  overflow: hidden;
+}
+
+.hp-ref-benefits__leaf {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 155, 106, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hp-ref-benefits__leaf--l {
+  left: -40px;
+  bottom: 20px;
+}
+
+.hp-ref-benefits__leaf--r {
+  right: -30px;
+  top: 40px;
+}
+
+.hp-ref-benefits__header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.hp-ref-benefits__kicker {
+  font-family: var(--vf-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2d8a5a;
+  margin: 0 0 0.4rem;
+}
+
+.hp-ref-benefits__title {
+  font-family: var(--vf-display);
+  font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+  color: #0f3d24;
+  margin: 0 0 0.75rem;
+}
+
+.hp-ref-benefits__ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  color: #2d9b6a;
+}
+
+.hp-ref-benefits__ornament span {
+  width: 48px;
+  height: 1px;
+  background: rgba(45, 155, 106, 0.45);
+}
+
+.hp-ref-benefits__ornament i {
+  font-size: 0.85rem;
+}
+
+.hp-ref-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hp-ref-benefits__card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem 1.15rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(15, 61, 36, 0.07);
+  border: 1px solid rgba(15, 92, 58, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hp-ref-benefits__card-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(125, 186, 40, 0.18);
+  color: #0f5c3a;
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.hp-ref-benefits__card h3 {
+  font-family: var(--vf-font);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f3d24;
+  margin: 0 0 0.45rem;
+}
+
+.hp-ref-benefits__card p {
+  font-family: var(--vf-font);
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 auto;
+  flex: 1;
+}
+
+.hp-ref-benefits__card-rule {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin-top: 1rem;
+  background: #2d9b6a;
+  border-radius: 999px;
+}
+
+.hp-ref-benefits__cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.hp-ref-benefits__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: #0f5c3a;
+  color: #fff;
+  font-family: var(--vf-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(15, 92, 58, 0.25);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hp-ref-benefits__btn:hover {
+  background: #1a7a4f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 960px) {
+  .hp-ref-logistics__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-ref-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hp-ref-wholesale__actions {
+    width: 100%;
+  }
+
+  .hp-ref-wholesale__btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .hp-ref-logistics__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-ref-benefits__grid {
+    grid-template-columns: 1fr;
+  }
+}

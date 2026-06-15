@@ -1,0 +1,70 @@
+/* Shared modal interfaces – Client side */
+.shared-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.shared-modal-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.shared-modal-icon-wrap {
+  margin-bottom: 1rem;
+}
+
+.shared-modal-icon {
+  font-size: 3rem;
+}
+
+.shared-modal-icon-success {
+  color: #0b5b24;
+}
+
+.shared-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0b5b24;
+  margin: 0 0 0.5rem;
+}
+
+.shared-modal-message {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.shared-modal-btn {
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.shared-modal-btn:hover {
+  transform: translateY(-2px);
+}
+
+.shared-modal-btn-primary {
+  background: #0b5b24;
+  color: #fff;
+}
+
+.shared-modal-btn-primary:hover {
+  background: #004212;
+}

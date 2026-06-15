@@ -1,0 +1,51 @@
+/* Login */
+.sp-login {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  
+  background-image: url("../images/ChatGPT Image May 18, 2026, 08_10_16 AM.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sp-login__hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.sp-login__brand {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+
+}
+
+.sp-login__brand i{
+  font-size: 2rem;
+}
+.sp-login__form {
+  width: 100%;
+  max-width: 360px;
+  background: var(--sp-card);
+  padding: 1.5rem;
+  border-radius: var(--sp-radius);
+  box-shadow: var(--sp-shadow);
+}
+
+.sp-login__footer-img {
+  height: 130px;
+  background: linear-gradient(135deg, #166534c9, #052e16b5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+}
+

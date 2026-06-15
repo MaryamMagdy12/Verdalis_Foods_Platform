@@ -1,0 +1,24 @@
+# Laravel
+Back/vendor/
+Back/node_modules/
+Back/.env
+Back/storage/*.key
+Back/public/storage
+
+# React
+Front/**/node_modules/
+Front/**/dist/
+Front/**/.env
+Front/**/.env.local
+
+# Test / cookies / private files
+*.txt
+*login*.json
+*cookies*.json
+*headers*.json
+
+# Editor / system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

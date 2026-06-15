@@ -1,0 +1,140 @@
+/* Product Dashboard table – product-dash-table-* */
+.product-dash-table-wrap {
+  background: var(--admin-white);
+  border-radius: var(--admin-radius);
+  box-shadow: var(--admin-shadow);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.product-dash-table-scroll {
+  overflow-x: auto;
+}
+
+.product-dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.product-dash-table th,
+.product-dash-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--admin-gray-200);
+  color: #004212;
+}
+
+.product-dash-table th {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--admin-gray-700);
+  background: var(--admin-gray-100);
+}
+
+.product-dash-table tbody tr {
+  transition: background var(--admin-transition);
+}
+
+.product-dash-table tbody tr:hover {
+  background: var(--admin-gray-100);
+}
+
+.product-dash-table-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: var(--admin-radius-sm);
+  background: var(--admin-gray-200);
+}
+
+.product-dash-table-no-img {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--admin-gray-100);
+  border: 1px dashed var(--admin-gray-300);
+  border-radius: var(--admin-radius-sm);
+  color: var(--admin-gray-500);
+  font-size: 0.6rem;
+  gap: 0.1rem;
+}
+
+.product-dash-table-no-img-icon {
+  font-size: 0.75rem;
+}
+
+.product-dash-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.product-dash-table-action-btn {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: opacity var(--admin-transition), transform 0.2s ease;
+}
+
+.product-dash-table-action-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.product-dash-table-action-edit {
+  background: var(--admin-green);
+  color: var(--admin-white);
+}
+
+.product-dash-table-action-delete {
+  background: var(--admin-red);
+  color: var(--admin-white);
+}
+
+.product-dash-table-action-highlight {
+  background: var(--admin-gray-200);
+  color: var(--admin-gray-700);
+}
+
+.product-dash-table-action-highlight.is-highlighted {
+  background: #f59e0b;
+  color: var(--admin-white);
+}
+
+.product-dash-table-star-off {
+  opacity: 0.4;
+}
+
+.product-dash-table-status-icon {
+  margin-right: 0.25rem;
+}
+
+.product-dash-table-status-green {
+  color: var(--admin-green);
+}
+
+.product-dash-table-status-yellow {
+  color: #d4a017;
+}
+
+.product-dash-table-status-red {
+  color: var(--admin-red);
+}
+
+.product-dash-table-loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--admin-gray-600);
+}
+.product-dash-table-empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--admin-gray-600);
+}

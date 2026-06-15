@@ -1,0 +1,141 @@
+/* Add Store page – unique class names: add-store-* */
+.add-store-page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.add-store-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--admin-green);
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.add-store-form {
+  background: var(--admin-white);
+  border-radius: var(--admin-radius);
+  box-shadow: var(--admin-shadow);
+  padding: 1.5rem;
+}
+
+.add-store-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.add-store-field {
+  margin-bottom: 1rem;
+}
+
+.add-store-field.full {
+  grid-column: 1 / -1;
+}
+
+.add-store-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--admin-green);
+  margin-bottom: 0.4rem;
+}
+
+.add-store-label-icon {
+  font-size: 0.85rem;
+  color: var(--admin-green);
+}
+
+.add-store-input,
+.add-store-select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--admin-gray-200);
+  border-radius: var(--admin-radius-sm);
+  font-size: 0.9rem;
+  transition: border-color var(--admin-transition);
+}
+
+.add-store-input:focus,
+.add-store-select:focus {
+  outline: none;
+  border-color: var(--admin-green);
+}
+
+.add-store-input-error {
+  border-color: var(--admin-red, #dc3545);
+  background-color: rgba(220, 53, 69, 0.04);
+}
+
+.add-store-field-error {
+  font-size: 0.8rem;
+  color: var(--admin-red, #dc3545);
+  margin: 0.25rem 0 0 0;
+  font-weight: 500;
+}
+
+.add-store-error {
+  font-size: 0.9rem;
+  color: var(--admin-red, #dc3545);
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 0.75rem;
+  background: rgba(220, 53, 69, 0.08);
+  border-radius: var(--admin-radius-sm);
+  border-left: 3px solid var(--admin-red, #dc3545);
+}
+
+.add-store-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--admin-gray-200);
+}
+
+.add-store-btn-submit {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: var(--admin-radius-sm);
+  background: var(--admin-green);
+  color: var(--admin-white);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--admin-transition), transform 0.2s ease;
+}
+
+.add-store-btn-submit:hover {
+  background: var(--admin-green-dark);
+  transform: translateY(-1px);
+}
+
+.add-store-btn-cancel {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: var(--admin-radius-sm);
+  background: var(--admin-red);
+  color: var(--admin-white);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity var(--admin-transition), transform 0.2s ease;
+}
+
+.add-store-btn-cancel:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .add-store-row {
+    grid-template-columns: 1fr;
+  }
+
+  .add-store-title {
+    font-size: 1.35rem;
+  }
+}

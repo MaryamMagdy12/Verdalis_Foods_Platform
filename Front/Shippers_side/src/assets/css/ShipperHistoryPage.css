@@ -1,0 +1,128 @@
+/* History stats row */
+.sp-stats--4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+  .sp-stats--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sp-stats--4 .sp-stat {
+  min-height: auto;
+  padding: 1rem 0.75rem;
+  text-align: center;
+}
+
+.sp-stats--4 .sp-stat strong {
+  font-size: 1.35rem;
+}
+
+.sp-stats--4 .sp-stat > span {
+  margin-top: 0.15rem;
+}
+
+
+/* History 2-column */
+.sp-history-layout {
+  display: block;
+}
+
+@media (min-width: 1000px) {
+  .sp-history-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+}
+
+.sp-donut-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 1rem auto;
+  background: conic-gradient(#16a34a 0 70%, #ea580c 70% 85%, #2563eb 85% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-donut-placeholder span {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--sp-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.sp-achievement-banner {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background: var(--sp-green-light);
+  border-radius: var(--sp-radius-sm);
+  font-size: 0.85rem;
+  color: var(--sp-green-dark);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+
+.sp-history-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--sp-card);
+  border: 1px solid var(--sp-border);
+  border-radius: var(--sp-radius);
+  padding: 1rem;
+  margin-bottom: 0.65rem;
+  box-shadow: var(--sp-shadow);
+}
+
+.sp-history-row__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.sp-history-row__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sp-history-row__client {
+  margin: 0.2rem 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.sp-history-row__addr {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--sp-muted);
+}
+
+.sp-history-row__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--sp-muted);
+}
+
+.sp-history-row__chev {
+  color: #d1d5db;
+  margin-top: 0.5rem;
+}
+

@@ -1,0 +1,87 @@
+/* Delivery steps */
+.sp-steps { display: flex; flex-direction: column; gap: 1rem; }
+
+.sp-step {
+  background: var(--sp-card);
+  border-radius: var(--sp-radius);
+  padding: 1rem;
+  border: 1px solid var(--sp-border);
+}
+
+.sp-step__num {
+  display: inline-flex;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--sp-green-dark);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.4rem;
+}
+
+.sp-otp-row {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.sp-otp-row input {
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: 1px solid var(--sp-border);
+  border-radius: var(--sp-radius-sm);
+}
+
+.sp-success-screen {
+  min-height: 70dvh;
+  background: linear-gradient(180deg, var(--sp-green-dark), #052e16);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--sp-radius);
+}
+
+.sp-success-screen__icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--sp-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Delivery confirmation 3-column */
+.sp-delivery-grid {
+  display: block;
+}
+
+@media (min-width: 1100px) {
+  .sp-delivery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 0.9fr;
+    gap: 1rem;
+    align-items: start;
+  }
+}
+
+.sp-delivery-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+

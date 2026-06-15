@@ -1,0 +1,124 @@
+/* Orders split layout */
+.sp-orders-layout {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .sp-orders-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 1.25rem;
+    align-items: start;
+  }
+}
+
+.sp-order-row {
+  cursor: pointer;
+  border-radius: var(--sp-radius);
+  margin-bottom: 0.65rem;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.sp-order-row.is-selected {
+  border-color: var(--sp-green-dark);
+}
+
+.sp-order-row .sp-order-card {
+  margin-bottom: 0;
+}
+
+.sp-order-card--compact .sp-order-card__actions {
+  display: none;
+}
+
+.sp-order-card--compact {
+  padding: 0.85rem;
+}
+
+.sp-order-card__addr--compact {
+  margin: 0.25rem 0 0.35rem;
+  font-size: 0.75rem;
+}
+
+.sp-detail-panel {
+  background: var(--sp-card);
+  border-radius: var(--sp-radius);
+  border: 1px solid var(--sp-border);
+  box-shadow: var(--sp-shadow);
+  padding: 1.15rem;
+  position: sticky;
+  top: 1rem;
+}
+
+@media (max-width: 1023px) {
+  .sp-detail-panel {
+    display: none;
+  }
+
+  .sp-detail-panel.is-open-mobile {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 180;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+}
+
+.sp-detail-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.sp-detail-panel__head h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.sp-detail-panel__close {
+  border: none;
+  background: var(--sp-gray-100, #f3f4f6);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sp-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.sp-detail-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--sp-muted);
+  margin-bottom: 0.15rem;
+}
+
+.sp-detail-address {
+  font-size: 0.85rem;
+  color: var(--sp-muted);
+  margin: 0 0 1rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.sp-detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sp-pagination-info {
+  font-size: 0.78rem;
+  color: var(--sp-muted);
+  margin-top: 1rem;
+}
+

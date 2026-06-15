@@ -1,0 +1,614 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap");
+
+/* ── Profile page shell ── */
+.sp-profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Top row: banner + account card ── */
+.sp-profile-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items:  center;
+}
+
+@media (min-width: 900px) {
+  .sp-profile-top {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+}
+
+/* ── Hero banner ── */
+.sp-profile-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background-image: url("../images/ChatGPT Image Jun 13, 2026, 05_07_11 AM.png");
+  /* background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 35%, #d1fae5 70%, #bbf7d0 100%); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom  center;
+  border: 1px solid #d1e7dd;
+  box-shadow: 0 8px 24px rgba(15, 61, 44, 0.08);
+  min-height: 168px;
+margin: 1rem;
+}
+
+.sp-profile-banner__scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sp-profile-banner__skyline {
+  position: absolute;
+  right: 8%;
+  bottom: 42%;
+  width: 42%;
+  height: 28%;
+  background:
+    linear-gradient(to top, transparent 0%, rgba(134, 239, 172, 0.35) 100%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(22, 101, 52, 0.12) 0,
+      rgba(22, 101, 52, 0.12) 8px,
+      transparent 8px,
+      transparent 18px
+    );
+  border-radius: 4px 4px 0 0;
+  opacity: 0.7;
+}
+
+.sp-profile-banner__road {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  height: 38%;
+  background: linear-gradient(180deg, #86efac 0%, #4ade80 55%, #22c55e 100%);
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.sp-profile-banner__boxes {
+  position: absolute;
+  right: 14%;
+  bottom: 34%;
+  display: flex;
+  gap: 0.35rem;
+  z-index: 1;
+}
+
+.sp-profile-banner__boxes span {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  background: linear-gradient(145deg, #d4a574, #b8956a);
+  border: 1px solid #a67c52;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.sp-profile-banner__boxes span:nth-child(2) {
+  height: 1.65rem;
+  align-self: flex-end;
+}
+
+.sp-profile-banner__boxes span:nth-child(3) {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.sp-profile-banner__truck {
+  position: absolute;
+  right: 10%;
+  bottom: 18%;
+  font-size: 3.75rem;
+  color: #15803d;
+  filter: drop-shadow(0 4px 8px rgba(15, 61, 44, 0.2));
+  z-index: 2;
+}
+
+.sp-profile-banner__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 4.35rem 4.5rem;
+  min-height: 180px;
+}
+
+.sp-profile-banner__avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sp-profile-banner__avatar {
+  width: 5.75rem;
+  height: 5.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 14px rgba(15, 61, 44, 0.15);
+  display: block;
+}
+
+.sp-profile-banner__avatar--placeholder {
+  background: linear-gradient(145deg, #4ade80, #16a34a);
+}
+
+.sp-profile-banner__avatar-badge {
+  position: absolute;
+  right: 2px;
+  bottom: 4px;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #fff;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+}
+
+.sp-profile-banner__info {
+  min-width: 0;
+}
+
+.sp-profile-banner__name {
+  margin: 0 0 0.45rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--sp-green-dark);
+  line-height: 1.15;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.sp-profile-banner__name .fa-circle-check {
+  font-size: 0.95rem;
+  color: #16a34a;
+}
+
+.sp-profile-banner__meta {
+  margin: 0 0 0.3rem;
+  font-size: 0.82rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.sp-profile-banner__meta i {
+  width: 0.9rem;
+  color: #6b7280;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.sp-profile-banner__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.sp-profile-banner__status.is-verified {
+  background: #dcfce7;
+  color: var(--sp-green-dark);
+}
+
+.sp-profile-banner__status i {
+  font-size: 0.68rem;
+}
+
+/* ── Account card (top right) ── */
+.sp-profile-account {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--sp-border);
+  box-shadow: 0 4px 16px rgba(15, 61, 44, 0.06);
+  overflow: hidden;
+}
+
+.sp-profile-account__head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: none;
+  background: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--sp-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.sp-profile-account__head i:first-child {
+  color: #9ca3af;
+  width: 1rem;
+  text-align: center;
+}
+
+.sp-profile-account__head span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-profile-account__head .fa-chevron-down {
+  color: #9ca3af;
+  font-size: 0.72rem;
+  transition: transform 0.2s ease;
+}
+
+.sp-profile-account__head .fa-chevron-down.is-open {
+  transform: rotate(180deg);
+}
+
+.sp-profile-account__phone {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 1.1rem 1rem;
+  font-size: 0.88rem;
+  color: var(--sp-text);
+}
+
+.sp-profile-account__phone i {
+  color: #9ca3af;
+  width: 1rem;
+  text-align: center;
+}
+
+.sp-profile-account__divider {
+  height: 1px;
+  background: var(--sp-border);
+  margin: 0;
+}
+
+.sp-profile-account__logout {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: none;
+  background: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #dc2626;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sp-profile-account__logout i {
+  width: 1rem;
+  text-align: center;
+}
+
+/* ── KPI row ── */
+.sp-profile-kpis {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+@media (min-width: 720px) {
+  .sp-profile-kpis {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sp-profile-kpi {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--sp-border);
+  box-shadow: 0 4px 14px rgba(15, 61, 44, 0.05);
+  padding: 1rem 1rem 1.75rem;
+  text-align: center;
+}
+
+.sp-profile-kpi__icon {
+  width: 2.35rem;
+  height: 2.35rem;
+  margin: 0 auto 0.55rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.sp-profile-kpi--today .sp-profile-kpi__icon,
+.sp-profile-kpi--completed .sp-profile-kpi__icon,
+.sp-profile-kpi--success .sp-profile-kpi__icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.sp-profile-kpi--failed .sp-profile-kpi__icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.sp-profile-kpi__label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--sp-muted);
+  margin-bottom: 0.15rem;
+}
+
+.sp-profile-kpi__value {
+  display: block;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--sp-text);
+  line-height: 1.1;
+}
+
+.sp-profile-kpi__wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.35rem;
+  opacity: 0.35;
+}
+
+.sp-profile-kpi--today .sp-profile-kpi__wave,
+.sp-profile-kpi--completed .sp-profile-kpi__wave,
+.sp-profile-kpi--success .sp-profile-kpi__wave {
+  color: #86efac;
+}
+
+.sp-profile-kpi--failed .sp-profile-kpi__wave {
+  color: #fca5a5;
+}
+
+/* ── Delivery performance panel ── */
+.sp-profile-performance {
+  /* background: #fff; */
+  background-image: url("../images/ChatGPT Image Jun 13, 2026, 05_27_27 AM.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:  center;
+  border-radius: 18px;
+  border: 1px solid var(--sp-border);
+  box-shadow: 0 8px 24px rgba(15, 61, 44, 0.06);
+  padding: 1.35rem 1.5rem 1.5rem;
+}
+
+.sp-profile-performance__title {
+  margin: 0 0 1.25rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--sp-green-dark);
+  padding-bottom: 0.55rem;
+  border-bottom: 3px solid #86efac;
+  display: inline-block;
+}
+
+.sp-profile-performance__loading {
+  margin: 0;
+  color: var(--sp-muted);
+  font-size: 0.9rem;
+}
+
+.sp-profile-performance__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .sp-profile-performance__body {
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+  }
+}
+
+/* Donut chart */
+.sp-profile-donut {
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.sp-profile-donut__center {
+  width: 5.75rem;
+  height: 5.75rem;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+.sp-profile-donut__center strong {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sp-green-dark);
+  line-height: 1;
+}
+
+.sp-profile-donut__center span {
+  margin-top: 0.2rem;
+  font-size: 0.62rem;
+  color: var(--sp-muted);
+  font-weight: 500;
+}
+
+/* Legend */
+.sp-profile-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sp-profile-legend li {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 0.55rem 0.75rem;
+  font-size: 0.88rem;
+}
+
+.sp-profile-legend__dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sp-profile-legend__dot--completed { background: var(--sp-green-mid); }
+.sp-profile-legend__dot--failed { background: #b91c1c; }
+.sp-profile-legend__dot--today { background: var(--sp-green-dark); }
+
+.sp-profile-legend__label {
+  color: var(--sp-muted);
+  font-weight: 500;
+}
+
+.sp-profile-legend__count {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sp-text);
+  min-width: 1.25rem;
+  text-align: right;
+}
+
+.sp-profile-legend__pill {
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.sp-profile-legend__pill--completed {
+  background: var(--sp-green-light);
+  color: var(--sp-green-mid);
+}
+
+.sp-profile-legend__pill--failed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.sp-profile-legend__pill--today {
+  background: #bbf7d0;
+  color: var(--sp-green-dark);
+}
+
+/* Globe decoration */
+.sp-profile-performance__globe {
+  position: relative;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.sp-profile-globe {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.5) 0%, transparent 45%),
+    linear-gradient(145deg, #d1fae5 0%, #86efac 40%, #4ade80 100%);
+  border: 2px solid rgba(134, 239, 172, 0.6);
+  position: relative;
+  opacity: 0.85;
+}
+
+.sp-profile-globe__pin {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #15803d;
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.25);
+}
+
+.sp-profile-globe__pin--1 { top: 28%; left: 38%; }
+.sp-profile-globe__pin--2 { top: 52%; left: 58%; }
+.sp-profile-globe__pin--3 { top: 38%; left: 68%; }
+
+.sp-profile-performance__leaf {
+  position: absolute;
+  color: #4ade80;
+  opacity: 0.55;
+}
+
+.sp-profile-performance__leaf--1 {
+  font-size: 1.75rem;
+  right: -0.5rem;
+  bottom: 0.25rem;
+  transform: rotate(25deg);
+}
+
+.sp-profile-performance__leaf--2 {
+  font-size: 1.25rem;
+  left: -0.35rem;
+  top: 0.5rem;
+  transform: rotate(-35deg) scaleX(-1);
+}
+
+/* Mobile tweaks */
+@media (max-width: 599px) {
+  .sp-profile-banner__content {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem 1rem;
+  }
+
+  .sp-profile-banner__meta {
+    justify-content: center;
+  }
+
+  .sp-profile-banner__truck {
+    font-size: 2.75rem;
+    right: 6%;
+    bottom: 12%;
+    opacity: 0.55;
+  }
+
+  .sp-profile-performance__globe {
+    display: none;
+  }
+}

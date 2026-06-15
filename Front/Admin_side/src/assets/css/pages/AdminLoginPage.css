@@ -1,0 +1,118 @@
+/* Admin Login – Verdalis theme */
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  /* background: linear-gradient(135deg, #e8f5e9 0%, #f4f6f5 50%, #c8e6c9 100%); */
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../images/ChatGPT Image May 18, 2026, 08_10_16 AM.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.admin-login-page::before,
+.admin-login-page::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  opacity: 0.06;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.admin-login-page::before {
+  top: 10%;
+  right: 8%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath fill='%230a2a1b' d='M60 8c-8 28-32 42-48 52 18-4 38 2 52 20 6-22 2-48-4-64z'/%3E%3C/svg%3E");
+}
+
+.admin-login-page::after {
+  bottom: 8%;
+  left: 6%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%232e7d32' d='M50 90C30 70 10 50 20 25c15 12 30 8 45 0 5 25 0 50-15 65z'/%3E%3C/svg%3E");
+}
+
+.admin-login-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--admin-white);
+  border-radius: var(--admin-radius);
+  box-shadow: var(--admin-shadow-lg);
+  padding: 2rem;
+  border: 1px solid var(--admin-gray-200);
+}
+
+.admin-login-title {
+  font-family: var(--admin-font-serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--admin-green-dark);
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.admin-login-field {
+  margin-bottom: 1rem;
+}
+
+.admin-login-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--admin-gray-700);
+  margin-bottom: 0.35rem;
+}
+
+.admin-login-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--admin-gray-200);
+  border-radius: var(--admin-radius-sm);
+  font-size: 0.95rem;
+  transition: border-color var(--admin-transition);
+}
+
+.admin-login-input:focus {
+  outline: none;
+  border-color: var(--admin-green);
+}
+
+.admin-login-error {
+  font-size: 0.9rem;
+  color: var(--admin-red);
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 0.75rem;
+  background: #ffebee;
+  border-radius: var(--admin-radius-sm);
+}
+
+.admin-login-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: var(--admin-radius-sm);
+  background: linear-gradient(135deg, var(--admin-green) 0%, var(--admin-green-dark) 100%);
+  color: var(--admin-white);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-login-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 42, 27, 0.25);
+}
+
+.admin-login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

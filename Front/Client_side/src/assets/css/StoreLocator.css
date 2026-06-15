@@ -1,0 +1,489 @@
+.find-a-store-page {
+  min-height: 60vh;
+  position: relative;
+  z-index: 1;
+}
+.find-a-store-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/images/ChatGPT Image May 13, 2026, 01_23_58 AM.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  z-index: -1;
+}
+.store-locator-section {
+  padding: calc(var(--client-nav-offset) + clamp(1rem, 3vw, 2rem)) clamp(4vw, 8vw, 6rem) clamp(2rem, 4vw, 3rem);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.store-locator-heading {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #004212;
+  margin: 0 0 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.store-locator-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-height: 480px;
+  height: 40vh;
+}
+
+@media (max-width: 900px) {
+  .store-locator-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.store-locator-panel {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-locator-list-panel {
+  background: #fff;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 66, 18, 0.15);
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.store-locator-search-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #004212;
+  margin-bottom: 0.35rem;
+}
+
+.store-locator-search-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.store-locator-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.store-locator-search-input:focus {
+  outline: none;
+  border-color: #0b5b24;
+  box-shadow: 0 0 0 2px rgba(11, 91, 36, 0.2);
+}
+
+.store-locator-search-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 0.35rem;
+  background: #004212;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.store-locator-search-btn:hover:not(:disabled) {
+  background: #6b1a1c;
+  transform: scale(1.02);
+}
+
+.store-locator-search-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.store-locator-count-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #004212;
+}
+
+.store-locator-count {
+  font-weight: 700;
+  color: #004212;
+  font-size: 0.95rem;
+}
+
+.store-locator-print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 0.35rem;
+  background: #004212;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.store-locator-print-btn:hover {
+  background: #6b1a1c;
+}
+
+.store-locator-list-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin-top: 0.75rem;
+}
+
+.store-locator-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.store-locator-list-empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: #555;
+}
+
+.store-locator-list-item {
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(0, 66, 18, 0.12);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.store-locator-list-item-selected {
+  border-color: #0b5b24;
+  box-shadow: 0 0 0 2px rgba(11, 91, 36, 0.2);
+}
+
+.store-locator-list-item-inner {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.store-locator-list-item-name {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #004212;
+}
+
+.store-locator-list-item-address,
+.store-locator-list-item-hours,
+.store-locator-list-item-days {
+  margin: 0.15rem 0;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.store-locator-list-item-brand {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: #004212;
+}
+
+.store-locator-list-item-brand i {
+  margin-right: 0.25rem;
+}
+
+.store-locator-list-item-directions {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-top: 1px solid rgba(0, 66, 18, 0.1);
+  background: #004212;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.store-locator-list-item-directions:hover {
+  background: #6b1a1c;
+}
+
+.store-locator-find-near-me {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid #0b5b24;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #0b5b24;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.store-locator-find-near-me:hover {
+  background: #6b1a1c;
+  color: #fff;
+}
+
+.store-locator-map-panel {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 66, 18, 0.15);
+  background: #e8f0ec;
+}
+
+.store-locator-map-loading {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+  z-index: 1000;
+}
+
+.store-locator-map-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.store-locator-map {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.store-locator-map .leaflet-tile-pane img.leaflet-tile {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.store-locator-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.store-locator-modal {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.store-locator-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #004212;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.35rem;
+  transition: background 0.2s ease;
+}
+
+.store-locator-modal-close:hover {
+  background: #6b1a1c;
+  color: #fff;
+}
+
+.store-locator-location-modal-icon {
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-size: 2.5rem;
+  color: #004212;
+}
+
+.store-locator-location-modal-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: #004212;
+}
+
+.store-locator-location-modal-text {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+.store-locator-location-modal-error {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: #c00;
+  text-align: center;
+}
+
+.store-locator-location-modal-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #004212;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.store-locator-location-modal-btn:hover:not(:disabled) {
+  background: #6b1a1c;
+}
+
+.store-locator-location-modal-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.store-locator-directions-modal-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #004212;
+}
+
+.store-locator-directions-modal-subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.store-locator-directions-modal-row {
+  margin-bottom: 0.5rem;
+}
+
+.store-locator-directions-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.15rem;
+}
+
+.store-locator-directions-value {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.store-locator-directions-units {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.store-locator-directions-unit {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  background: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.store-locator-directions-unit.active {
+  border-color: #0b5b24;
+  background: #e8f5e9;
+  color: #004212;
+}
+
+.store-locator-directions-distance {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #004212;
+}
+
+.store-locator-directions-modal-btn {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #004212;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.store-locator-directions-modal-btn:hover {
+  background: #6b1a1c;
+}
+
+@media print {
+  .no-print,
+  .store-locator-map-panel,
+  .store-locator-search,
+  .store-locator-find-near-me,
+  .store-locator-modal-backdrop {
+    display: none !important;
+  }
+
+  .store-locator-section {
+    padding: 0;
+  }
+
+  .store-locator-main {
+    display: block;
+  }
+
+  .store-locator-list-panel {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .store-locator-count-row {
+    margin-bottom: 0.5rem;
+  }
+}

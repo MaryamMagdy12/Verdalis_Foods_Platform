@@ -1,0 +1,140 @@
+.vf-section--product-detail {
+  padding-top: calc(var(--client-nav-offset) + clamp(1.5rem, 3vw, 2.5rem));
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-detail-gallery {
+  padding: 0;
+  overflow: hidden;
+}
+
+.product-detail-gallery img {
+  width: 100%;
+  display: block;
+  border-radius: var(--vf-radius);
+}
+
+.product-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: clamp(0.5rem, 2vw, 1rem) 0;
+}
+
+.product-detail-title {
+  margin-bottom: 0.25rem;
+}
+
+.product-detail-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--vf-emerald);
+  margin: 0;
+}
+
+.product-detail-hint {
+  margin: 0;
+}
+
+.product-detail-desc {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--vf-slate);
+  max-width: 52ch;
+}
+
+.product-detail-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--vf-muted);
+}
+
+.product-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  align-items: center;
+}
+
+.product-detail-actions input {
+  width: 80px;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.product-detail-related {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(15, 92, 58, 0.1);
+}
+
+.product-detail-related-title {
+  margin: 0 0 1.5rem;
+}
+
+.product-detail-related-card {
+  background: var(--vf-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--vf-radius);
+  box-shadow: var(--vf-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail-related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--vf-shadow-lg);
+}
+
+.track-timeline {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.track-timeline li {
+  padding: 0.65rem 0 0.65rem 1.5rem;
+  position: relative;
+  color: var(--vf-muted);
+}
+
+.track-timeline li.done {
+  color: var(--vf-emerald);
+  font-weight: 600;
+}
+
+.track-timeline li[data-current="true"] {
+  color: var(--vf-slate);
+}
+
+.track-timeline li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e2e8f0;
+}
+
+.track-timeline li.done::before {
+  background: var(--vf-emerald);
+}

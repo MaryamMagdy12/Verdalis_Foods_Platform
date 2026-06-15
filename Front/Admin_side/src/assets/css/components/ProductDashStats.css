@@ -1,0 +1,51 @@
+/* Product Dashboard stats – product-dash-stats-* */
+.product-dash-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-dash-stat-card {
+  background: var(--admin-white);
+  border-radius: var(--admin-radius);
+  padding: 1rem;
+  box-shadow: var(--admin-shadow);
+  transition: transform var(--admin-transition), box-shadow var(--admin-transition);
+}
+
+.product-dash-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-dash-stat-card.green {
+  background: var(--admin-green);
+  color: var(--admin-white);
+}
+
+.product-dash-stat-card.red {
+  background: var(--admin-red);
+  color: var(--admin-white);
+}
+
+.product-dash-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.95;
+  margin-bottom: 0.35rem;
+}
+
+.product-dash-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.product-dash-stat-icon {
+  font-size: 1rem;
+  opacity: 0.9;
+}

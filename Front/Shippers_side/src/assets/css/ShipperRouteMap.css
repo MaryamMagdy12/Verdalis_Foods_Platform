@@ -1,0 +1,139 @@
+.sp-route-map {
+  position: relative;
+  border-radius: var(--sp-radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--sp-border);
+  background: #e8eef2;
+}
+
+.sp-route-map--tall {
+  height: min(52vh, 320px);
+  min-height: 220px;
+}
+
+.sp-route-map--compact {
+  height: 180px;
+  min-height: 160px;
+}
+
+.sp-route-map__canvas {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  z-index: 1;
+}
+
+.sp-route-map__canvas.leaflet-container {
+  font-family: inherit;
+  background: #e8eef2;
+}
+
+.sp-route-map__status {
+  position: absolute;
+  top: 0.65rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--sp-border);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--sp-green-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.sp-route-map__status--muted {
+  color: var(--sp-muted);
+}
+
+.sp-route-map__empty-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--sp-muted);
+  font-size: 0.82rem;
+  pointer-events: none;
+}
+
+.sp-route-map__empty-overlay i {
+  font-size: 1.5rem;
+  color: #9ca3af;
+}
+
+/* Shipper live location pointer */
+.sp-route-map__shipper-wrap {
+  background: none !important;
+  border: none !important;
+}
+
+.sp-route-map__shipper-pointer {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #15803d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.95), 0 4px 12px rgba(21, 128, 61, 0.45);
+  font-size: 0.95rem;
+}
+
+.sp-route-map__shipper-pointer i {
+  transform: rotate(-45deg);
+}
+
+.sp-route-map__shipper-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(21, 128, 61, 0.45);
+  animation: sp-route-map-pulse 2s ease-out infinite;
+}
+
+@keyframes sp-route-map-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+/* Numbered stop pins */
+.sp-route-map__stop-wrap {
+  background: none !important;
+  border: none !important;
+}
+
+.sp-route-map__stop-pin {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--sp-green-dark);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(15, 61, 44, 0.35);
+}
+
+.sp-route-map .leaflet-control-attribution {
+  font-size: 0.58rem;
+  background: rgba(255, 255, 255, 0.85);
+}

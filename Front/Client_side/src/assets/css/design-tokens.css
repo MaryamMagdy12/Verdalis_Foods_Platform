@@ -1,0 +1,29 @@
+/* Verdalis premium palette — shared site tokens */
+:root {
+  --client-nav-offset: clamp(5rem, 9vh, 6.25rem);
+  --vp-forest: #0f3d24;
+  --vp-forest-mid: #14532d;
+  --vp-forest-bright: #1f7a3d;
+  --vp-lime: #65a30d;
+  --vp-mint: #dff3cf;
+  --vp-cream: #f7fff1;
+  --vp-white: #ffffff;
+
+  --vp-forest-rgb: 15, 61, 36;
+  --vp-forest-bright-rgb: 31, 122, 61;
+  --vp-lime-rgb: 101, 163, 13;
+  --vp-mint-rgb: 223, 243, 207;
+
+  /* Aliases used across existing CSS */
+  --home-green-deep: var(--vp-forest);
+  --home-green: var(--vp-forest-mid);
+  --home-accent: var(--vp-lime);
+  --home-cream: var(--vp-cream);
+  --home-cream-soft: var(--vp-cream);
+  --home-mint: var(--vp-mint);
+  --home-footer-bg: var(--vp-forest);
+  --home-products-veil: var(--vp-white);
+  --home-green-deep-rgb: 15, 61, 36;
+  --home-accent-rgb: 101, 163, 13;
+  --home-mint-rgb: 223, 243, 207;
+}
