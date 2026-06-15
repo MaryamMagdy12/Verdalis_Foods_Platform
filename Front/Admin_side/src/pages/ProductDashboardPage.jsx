@@ -19,8 +19,7 @@ import { AdminPageHeader } from "../components/dashboard/AdminPageHeader";
 import { AdminKpiRow } from "../components/dashboard/AdminKpiRow";
 import { AdminDataTable, AdminTablePagination } from "../components/dashboard/AdminDataTable";
 import { AdminStatusBadge } from "../components/dashboard/AdminStatusBadge";
-
-const apiBase = () => (import.meta.env.VITE_API_URL || "").replace(/\/api\/?$/, "");
+import { storageUrl } from "../utils/storageUrl";
 
 export function ProductDashboardPage() {
   const navigate = useNavigate();
@@ -156,7 +155,7 @@ export function ProductDashboardPage() {
                   <div className="admin-table-client">
                     {row.image ? (
                       <img
-                        src={row.image.startsWith("http") ? row.image : `${apiBase()}/storage/${row.image}`}
+                        src={storageUrl(row.image)}
                         alt=""
                         className="admin-table-img"
                       />

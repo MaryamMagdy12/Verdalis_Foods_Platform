@@ -144,7 +144,15 @@ class PaymentService
     public function handleStripeWebhook(string $payload, ?string $signature): void
     {
         $secret = config('services.stripe.webhook_secret');
-        if ($secret && $signature) {
+
+        if (app()->environment('production') && ! $secret) {
+            throw new \RuntimeException('STRIPE_WEBHOOK_SECRET is required in production.');
+        }
+
+        if ($secret) {
+            if (! $signature) {
+                throw new \InvalidArgumentException('Missing Stripe-Signature header.');
+            }
             $this->verifyStripeSignature($payload, $signature, $secret);
         }
 

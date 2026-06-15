@@ -10,6 +10,10 @@ class GoogleTokenVerifier
     public function verify(string $idToken): array
     {
         $clientId = config('services.google.client_id');
+        if (! $clientId && app()->environment('production')) {
+            throw ValidationException::withMessages(['credential' => ['Google Sign-In is not configured.']]);
+        }
+
         $response = Http::get('https://oauth2.googleapis.com/tokeninfo', [
             'id_token' => $idToken,
         ]);

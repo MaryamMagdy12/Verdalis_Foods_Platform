@@ -24,7 +24,7 @@ class OrderConfirmationMail extends Mailable
 
     public function content(): Content
     {
-        $frontend = rtrim((string) env('FRONTEND_URL', 'http://localhost:5174'), '/');
+        $frontend = rtrim((string) config('frontend.client_url'), '/');
         $trackUrl = $frontend.'/track-order?order='.urlencode($this->order->order_number)
             .'&token='.urlencode((string) $this->order->tracking_token);
 

@@ -10,6 +10,7 @@ import { ConfirmModal } from "../components/shared/ConfirmModal";
 import "../assets/css/pages/AddProductPage.css";
 import { AdminPageShell } from "../components/dashboard/AdminPageShell";
 import { AdminPageHeader } from "../components/dashboard/AdminPageHeader";
+import { storageUrl } from "../utils/storageUrl";
 
 export function AddProductPage() {
   const navigate = useNavigate();
@@ -75,17 +76,7 @@ export function AddProductPage() {
             image: null,
           });
           if (imageUrl && typeof imageUrl === "string") {
-            let fullUrl;
-            if (imageUrl.startsWith("http")) {
-              fullUrl = imageUrl;
-            } else {
-              const apiBase = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
-              const origin = apiBase.replace(/\/api\/?$/, "") || "http://localhost:8000";
-              const path = imageUrl.replace(/^\/+/, "");
-              const pathWithStorage = path.startsWith("storage") ? path : `storage/${path}`;
-              fullUrl = `${origin}/${pathWithStorage}`;
-            }
-            setImagePreview(fullUrl);
+            setImagePreview(storageUrl(imageUrl));
           }
         }
       } catch (_) {}

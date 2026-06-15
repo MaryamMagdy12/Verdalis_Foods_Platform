@@ -14,7 +14,9 @@ class StorageUrl
             return $path;
         }
 
-        return asset('storage/' . ltrim($path, '/'));
+        $base = rtrim((string) config('filesystems.disks.public.url'), '/');
+
+        return $base.'/'.ltrim($path, '/');
     }
 
     /** @param  array<int, string>|null  $paths */

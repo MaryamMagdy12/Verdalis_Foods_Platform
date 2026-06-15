@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit, faImage, faStar } from "@fortawesome/free-solid-svg-icons";
 import { ScrollReveal } from "../shared/ScrollReveal";
 import "../../assets/css/components/ProductDashTable.css";
+import { storageUrl } from "../../utils/storageUrl";
 
 export function ProductDashTable({ products = [], loading, onEdit, onDelete, onHighlight }) {
   if (loading) {
@@ -41,7 +42,7 @@ export function ProductDashTable({ products = [], loading, onEdit, onDelete, onH
                   <td>
                     {row.image ? (
                       <img
-                        src={row.image.startsWith("http") ? row.image : `${(import.meta.env.VITE_API_URL || "").replace(/\/api\/?$/, "")}/storage/${row.image}`}
+                        src={storageUrl(row.image)}
                         alt=""
                         className="product-dash-table-img"
                       />

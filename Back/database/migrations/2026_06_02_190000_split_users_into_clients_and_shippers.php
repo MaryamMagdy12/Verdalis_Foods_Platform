@@ -91,6 +91,8 @@ return new class extends Migration
             ");
         }
 
+        $this->resetPostgresSequences();
+
         $this->migrateClientFk('addresses', 'user_id');
         $this->migrateClientFk('orders', 'user_id', 'order_number');
 
@@ -217,6 +219,26 @@ return new class extends Migration
 
     private function hasForeign(string $table, string $column): bool
     {
+        $driver = Schema::getConnection()->getDriverName();
+
+        if ($driver === 'pgsql') {
+            $row = DB::selectOne(
+                "SELECT con.conname AS constraint_name
+                 FROM pg_constraint con
+                 INNER JOIN pg_class rel ON rel.oid = con.conrelid
+                 INNER JOIN pg_namespace nsp ON nsp.oid = rel.relnamespace
+                 INNER JOIN pg_attribute att ON att.attrelid = con.conrelid AND att.attnum = ANY(con.conkey)
+                 WHERE nsp.nspname = current_schema()
+                   AND rel.relname = ?
+                   AND att.attname = ?
+                   AND con.contype = 'f'
+                 LIMIT 1",
+                [$table, $column]
+            );
+
+            return $row !== null;
+        }
+
         $db = Schema::getConnection()->getDatabaseName();
         $row = DB::selectOne(
             'SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? AND COLUMN_NAME = ? AND REFERENCED_TABLE_NAME IS NOT NULL LIMIT 1',
@@ -224,6 +246,22 @@ return new class extends Migration
         );
 
         return $row !== null;
+    }
+
+    private function resetPostgresSequences(): void
+    {
+        if (Schema::getConnection()->getDriverName() !== 'pgsql') {
+            return;
+        }
+
+        foreach (['clients', 'shippers'] as $table) {
+            if (! Schema::hasTable($table)) {
+                continue;
+            }
+            DB::statement(
+                "SELECT setval(pg_get_serial_sequence('{$table}', 'id'), COALESCE((SELECT MAX(id) FROM {$table}), 1))"
+            );
+        }
     }
 
     public function down(): void
