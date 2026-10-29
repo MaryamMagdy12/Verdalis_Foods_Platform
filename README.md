@@ -1,6 +1,12 @@
-# Verdalis Foods — Site Catalog
 
-Monorepo for **Verdalis Foods** (Prime Fine Foods): a Laravel API backend and three React (Vite) frontends for customers, administrators, and delivery shippers.
+# Verdalis Foods — Wholesale Ordering & Delivery Platform
+
+Verdalis Foods is a full-stack distribution management platform built with Laravel, MySQL, and React.
+
+It connects customers, administrators, and delivery shippers through a shared Laravel REST API, covering product management, inventory, orders, payments, and delivery operations.
+
+The project includes three React applications for customers, administrators, and shippers, each designed around its own workflows and permissions.
+
 
 ## Architecture
 
